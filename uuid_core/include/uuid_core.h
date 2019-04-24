@@ -4,5 +4,6 @@
 #ifndef __UUID_CORE_H__
 #define __UUID_CORE_H__
 
+#include "uuid_core_symbols.h"
 
 #endif /* __UUID_CORE_H__ */
