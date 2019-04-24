@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -luuid
+LIBS := -lcommon_core -luuid
 

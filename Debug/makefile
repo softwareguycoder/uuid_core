@@ -25,11 +25,14 @@ endif
 # All Target
 all: libuuid_core.so
 
+dependents:
+	-cd /home/bhart/git/common_core/common_core/Debug && $(MAKE) clean all
+
 # Tool invocations
-libuuid_core.so: $(OBJS) $(USER_OBJS)
+libuuid_core.so: $(OBJS) $(USER_OBJS) /home/bhart/git/common_core/common_core/Debug/libcommon_core.so
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc -shared -o "libuuid_core.so" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc -L"/home/bhart/git/common_core/common_core/Debug" -shared -o "libuuid_core.so" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
@@ -44,5 +47,6 @@ post-build:
 	-@echo ' '
 
 .PHONY: all clean dependents post-build
+/home/bhart/git/common_core/common_core/Debug/libcommon_core.so:
 
 -include ../makefile.targets
