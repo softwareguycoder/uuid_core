@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <uuid/uuid.h>
 
 #endif //__UUID_CORE_STDAFX_H__
 
