@@ -7,6 +7,14 @@
 #include "uuid_core_symbols.h"
 
 /**
+ * @brief Compares two UUIDs and determines whether they are equal.
+ * @param uuid1 The first UUID to be compared.
+ * @param uuid2 The UUID to compare the first one against.
+ * @returns TRUE if the two UUIDs are the same value; FALSE otherwise.
+ */
+BOOL AreEqual(UUID uuid1, UUID uuid2);
+
+/**
  * @brief Generates a new universally-unique identifier (UUID).
  * @param pUUID Address of a memory location that will receive the value
  * generated.  This must have a valid address value.

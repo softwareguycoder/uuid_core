@@ -11,6 +11,14 @@
 // Externally-exposed functions
 
 ///////////////////////////////////////////////////////////////////////////////
+// AreEqual function
+
+BOOL AreEqual(UUID uuid1, UUID uuid2) {
+    BOOL bResult = uuid_compare(uuid1, uuid2) == 0;
+    return bResult;
+}
+
+///////////////////////////////////////////////////////////////////////////////
 // GenerateNewUUID function
 
 void GenerateNewUUID(UUID* pUUID) {
