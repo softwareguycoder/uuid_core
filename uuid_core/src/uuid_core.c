@@ -44,7 +44,7 @@ BOOL IsUUIDValid(UUID* pUUID) {
 		return bResult; // NULL reference is not a valid UUID
 	}
 
-	bResult = uuid_is_null(*pUUID);
+	bResult = !uuid_is_null(*pUUID);
 
 	return bResult;
 }
