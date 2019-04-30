@@ -7,6 +7,18 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Internally-used functions
 
+void ThrowUUIDException(const char* pszMessage) {
+    if (!IsNullOrWhiteSpace(pszMessage)) {
+        fprintf(stderr, "%s", pszMessage);
+    }
+    exit(ERROR);
+}
+
+void ThrowUUIDNullException() {
+    fprintf(stderr, UUID_NULL);
+    exit(ERROR);
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 // Externally-exposed functions
 
@@ -15,13 +27,11 @@
 
 BOOL AreEqual(UUID* pUUID1, UUID* pUUID2) {
     if (pUUID1 == NULL || *pUUID1 == NULL) {
-        fprintf(stderr, UUID_NULL);
-        exit(ERROR);
+        return FALSE;
     }
 
     if (pUUID2 == NULL || *pUUID2 == NULL) {
-        fprintf(stderr, UUID_NULL);
-        exit(ERROR);
+        return FALSE;
     }
 
     BOOL bResult = uuid_compare(*pUUID1, *pUUID2) == 0;
@@ -35,8 +45,7 @@ void GenerateNewUUID(UUID* pUUID) {
     // Must have an address in memory where
     // to copy the generated value to
     if (pUUID == NULL || *pUUID == NULL) {
-        fprintf(stderr, UUID_NULL);
-        exit(ERROR);
+        ThrowUUIDNullException();
     }
 
     // generate
@@ -64,13 +73,11 @@ BOOL IsUUIDValid(UUID* pUUID) {
 
 void UUIDFromString(const char* pszUUID, UUID* pOutputUUID) {
     if (IsNullOrWhiteSpace(pszUUID)) {
-        fprintf(stderr, UUID_BLANK);
-        exit(ERROR);
+        ThrowUUIDNullException();
     }
 
     if (pOutputUUID == NULL || *pOutputUUID == NULL) {
-        fprintf(stderr, UUID_NULL);
-        exit(ERROR);
+        ThrowUUIDNullException();
     }
 
     uuid_parse(pszUUID, *pOutputUUID);
@@ -81,14 +88,12 @@ void UUIDFromString(const char* pszUUID, UUID* pOutputUUID) {
 
 char* UUIDToString(UUID* pUUID) {
     if (pUUID == NULL || *pUUID == NULL) {
-        fprintf(stderr, UUID_NULL);
-        exit(ERROR);
+        ThrowUUIDNullException();
     }
 
     char* pszResult = (char*) calloc(37, sizeof(char));
     if (pszResult == NULL) {
-        fprintf(stderr, "Failed to allocate storage for UUID string.\n");
-        exit(ERROR);
+        ThrowUUIDException("Failed to allocate storage for UUID string.\n");
     }
 
     // unparse (to string)
