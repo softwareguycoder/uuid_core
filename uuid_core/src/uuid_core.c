@@ -93,7 +93,7 @@ char* UUIDToString(UUID* pUUID) {
 
     char* pszResult = (char*) calloc(37, sizeof(char));
     if (pszResult == NULL) {
-        ThrowUUIDException("Failed to allocate storage for UUID string.\n");
+        ThrowUUIDException(FAILED_ALLOC_UUID_STORAGE);
     }
 
     // unparse (to string)
