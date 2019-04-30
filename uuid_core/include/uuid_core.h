@@ -8,11 +8,11 @@
 
 /**
  * @brief Compares two UUIDs and determines whether they are equal.
- * @param uuid1 The first UUID to be compared.
- * @param uuid2 The UUID to compare the first one against.
+ * @param pUUID1 Address of the first UUID value to compare.
+ * @param pUUID2 Address of the second UUID value to compare.
  * @returns TRUE if the two UUIDs are the same value; FALSE otherwise.
  */
-BOOL AreEqual(UUID uuid1, UUID uuid2);
+BOOL AreEqual(UUID* pUUID1, UUID* pUUID2);
 
 /**
  * @brief Generates a new universally-unique identifier (UUID).
@@ -41,13 +41,13 @@ void UUIDFromString(const char* pszUUID, UUID* pOutputUUID);
 
 /**
  * @brief Given a UUID value, puts its string representation into a char array.
- * @param uuid UUID value to represent as a string.
+ * @param pUUID Address of the UUID value to represent as a string.
  * @return Pointer to the first element of a char* buffer that contains the
  * string representation of the UUID provided.
  * @remarks An example value output is "1b4e28ba-2fa1-11d2-883f-0016d3cca427\0"
  * The output buffer is always 37 bytes long.  The memory whose address is
  * returned by this function must be freed with free().
  */
-char* UUIDToString(UUID uuid);
+char* UUIDToString(UUID* pUUID);
 
 #endif /* __UUID_CORE_H__ */
