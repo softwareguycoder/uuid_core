@@ -6,6 +6,8 @@
 
 #include "uuid_core_symbols.h"
 
+#include <../../api_core/api_core/include/api_core.h>
+
 /**
  * @brief Compares two UUIDs and determines whether they are equal.
  * @param pUUID1 Address of the first UUID value to compare.

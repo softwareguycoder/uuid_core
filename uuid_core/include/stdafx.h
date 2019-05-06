@@ -15,6 +15,7 @@
  * ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/.
  */
 
+#include <../../api_core/api_core/include/api_core.h>
 #include <../../common_core/common_core/include/common_core.h>
 
 #endif //__UUID_CORE_STDAFX_H__
