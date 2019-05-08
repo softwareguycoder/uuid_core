@@ -14,7 +14,7 @@
  * @param pUUID2 Address of the second UUID value to compare.
  * @returns TRUE if the two UUIDs are the same value; FALSE otherwise.
  */
-BOOL AreEqual(UUID* pUUID1, UUID* pUUID2);
+BOOL AreUUIDsEqual(UUID* pUUID1, UUID* pUUID2);
 
 /**
  * @brief Generates a new universally-unique identifier (UUID).

@@ -25,7 +25,7 @@ void ThrowUUIDNullException() {
 ///////////////////////////////////////////////////////////////////////////////
 // AreEqual function
 
-BOOL AreEqual(UUID* pUUID1, UUID* pUUID2) {
+BOOL AreUUIDsEqual(UUID* pUUID1, UUID* pUUID2) {
     if (pUUID1 == NULL || *pUUID1 == NULL) {
         return FALSE;
     }
