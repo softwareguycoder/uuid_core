@@ -87,7 +87,7 @@ void UUIDFromString(const char* pszUUID, UUID* pOutputUUID) {
 // UUIDToString function
 
 char* UUIDToString(UUID* pUUID) {
-    if (pUUID == NULL || *pUUID == NULL) {
+    if (!IsUUIDValid(pUUID)) {
         ThrowUUIDNullException();
     }
 
