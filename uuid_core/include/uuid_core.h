@@ -17,6 +17,16 @@
 BOOL AreUUIDsEqual(UUID* pUUID1, UUID* pUUID2);
 
 /**
+ * @name CopyUUID
+ * @brief Copies one UUID value to another.
+ * @param pDestUUID Address of the UUID value that will receive the data.
+ * @param pSrcUUID Address of the UUID value that has the data to be copied.
+ * @remarks Makes the binary data in the array pointed to by pDestUUID match
+ * the data in the array pointed to by pSrcUUID.
+ */
+void CopyUUID(UUID* pDestUUID, UUID* pSrcUUID);
+
+/**
  * @brief Generates a new universally-unique identifier (UUID).
  * @param pUUID Address of a memory location that will receive the value
  * generated.  This must have a valid address value.

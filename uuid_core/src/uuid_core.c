@@ -26,16 +26,32 @@ void ThrowUUIDNullException() {
 // AreEqual function
 
 BOOL AreUUIDsEqual(UUID* pUUID1, UUID* pUUID2) {
-    if (pUUID1 == NULL || *pUUID1 == NULL) {
+    if (!IsUUIDValid(pUUID1)) {
         return FALSE;
     }
 
-    if (pUUID2 == NULL || *pUUID2 == NULL) {
+    if (!IsUUIDValid(pUUID2)) {
         return FALSE;
     }
 
     BOOL bResult = uuid_compare(*pUUID1, *pUUID2) == 0;
     return bResult;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// CopyUUID function
+
+void CopyUUID(UUID* pDestUUID, UUID* pSrcUUID)
+{
+  if (pDestUUID == NULL) {
+    return; // Required parameter
+  }
+
+  if (!IsUUIDValid(pSrcUUID)) {
+    return; // Required parameter
+  }
+
+  uuid_copy(*pDestUUID, *pSrcUUID);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
