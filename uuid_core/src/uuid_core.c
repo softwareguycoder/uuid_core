@@ -7,17 +7,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Internally-used functions
 
-void ThrowUUIDException(const char* pszMessage) {
-    if (!IsNullOrWhiteSpace(pszMessage)) {
-        fprintf(stderr, "%s", pszMessage);
-    }
-    exit(ERROR);
-}
 
-void ThrowUUIDNullException() {
-    fprintf(stderr, UUID_NULL);
-    exit(ERROR);
-}
 
 ///////////////////////////////////////////////////////////////////////////////
 // Externally-exposed functions
@@ -109,7 +99,7 @@ char* UUIDToString(UUID* pUUID) {
 
     char* pszResult = (char*) calloc(37, sizeof(char));
     if (pszResult == NULL) {
-        ThrowUUIDException(FAILED_ALLOC_UUID_STORAGE);
+        ThrowUUIDInvalidException(FAILED_ALLOC_UUID_STORAGE);
     }
 
     // unparse (to string)
