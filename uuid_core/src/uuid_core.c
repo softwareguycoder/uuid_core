@@ -24,8 +24,10 @@ BOOL AreUUIDsEqual(UUID* pUUID1, UUID* pUUID2) {
         return FALSE;
     }
 
-    BOOL bResult = uuid_compare(*pUUID1, *pUUID2) == 0;
-    return bResult;
+    /* the two UUID variables passed to this function
+     * have the same value if the uuid_compare function
+     * returns zero. */
+    return uuid_compare(*pUUID1, *pUUID2) == 0;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
