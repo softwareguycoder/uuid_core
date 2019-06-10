@@ -96,11 +96,11 @@ char* UUIDToString(UUID* pUUID) {
         ThrowUUIDNullException();
     }
 
-    char* pszResult = (char*) malloc(37*sizeof(char));
+    char* pszResult = (char*) malloc(UUID_SIZE*sizeof(char));
     if (pszResult == NULL) {
         ThrowUUIDInvalidException(FAILED_ALLOC_UUID_STORAGE);
     }
-    memset(pszResult, 0, 37);
+    memset(pszResult, 0, UUID_SIZE*sizeof(char));
 
     // unparse (to string)
     uuid_unparse(*pUUID, pszResult);
