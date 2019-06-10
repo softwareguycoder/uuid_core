@@ -16,6 +16,7 @@ typedef uuid_t UUID;
 #endif //FAILED_ALLOC_UUID_STORAGE
 
 /**
+ * @name UUID_BLANK
  * @brief Error message that is displayed when the user passes a blank
  * string to the UUIDFromString function.
  */
@@ -25,6 +26,7 @@ typedef uuid_t UUID;
 #endif //UUID_BLANK
 
 /**
+ * @name UUID_SIZE
  * @brief Size of a string buffer.
  */
 #ifndef UUID_SIZE
