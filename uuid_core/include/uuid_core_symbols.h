@@ -3,6 +3,11 @@
 #ifndef __UUID_CORE_SYMBOLS_H__
 #define __UUID_CORE_SYMBOLS_H__
 
+/**
+ * @name UUID
+ * @brief Typedef of a uuid_t symbol from the libuuid.so library.  Meant to
+ * make code more readable.
+ */
 typedef uuid_t UUID;
 
 /**
