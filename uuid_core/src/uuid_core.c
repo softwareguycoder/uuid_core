@@ -66,14 +66,11 @@ void GenerateNewUUID(UUID* pUUID) {
 BOOL IsUUIDValid(UUID* pUUID) {
     // Must have an address in memory where the UUID
     // to be checked is sitting
-    BOOL bResult = FALSE;
     if (pUUID == NULL || *pUUID == NULL) {
-        return bResult; // NULL reference is not a valid UUID
+        return FALSE; // NULL reference is not a valid UUID
     }
 
-    bResult = !uuid_is_null(*pUUID);
-
-    return bResult;
+    return !uuid_is_null(*pUUID);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
