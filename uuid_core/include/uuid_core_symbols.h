@@ -6,6 +6,7 @@
 typedef uuid_t UUID;
 
 /**
+ * @name FAILED_ALLOC_UUID_STORAGE
  * @brief Error message that is displayed when we are unable to allocate a
  * buffer to hold the string representation of a UUID value.
  */
