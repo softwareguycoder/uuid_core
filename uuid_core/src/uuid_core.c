@@ -50,7 +50,7 @@ void CopyUUID(UUID* pDestUUID, UUID* pSrcUUID)
 void GenerateNewUUID(UUID* pUUID) {
   // Must have an address in memory where
   // to copy the generated value to
-  if (pUUID == NULL || *pUUID == NULL) {
+  if (pUUID == NULL) {
     ThrowUUIDNullException();
   }
 
