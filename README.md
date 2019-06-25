@@ -3,7 +3,9 @@
 ## I. Introduction
 The ```uuid_core``` library was created in order to provide a wrapper around the API for creating and manipulating [Universally-Unique Identifiers (UUIDs)](https://en.wikipedia.org/wiki/Universally_unique_identifier) in C under Linux.
 ### A. What is a Universally-Unique Identifier (UUID)?
-According to Wikipedia,"A universally unique identifier (UUID) is a 128-bit number used to identify information in computer systems. The term globally unique identifier (GUID) is also used, typically in software created by Microsoft."  These identifiers are truly unique, as there are more possible combinations of values in them than there are stars in the entire Universe.
+According to Wikipedia,"A universally unique identifier (UUID) is a 128-bit number used to identify information in computer systems. The term globally unique identifier (GUID) is also used, typically in software created by Microsoft."  
+
+These identifiers are truly unique, as there are more possible combinations of values in them than there are stars in the entire Universe.
 
 Furthmore, according to the same article, when generated according to the standard methods, UUIDs are for practical purposes unique, without depending for their uniqueness on a central registration authority or coordination between the parties generating them, unlike most other numbering schemes. While the probability that a UUID will be duplicated is not zero, it is close enough to zero to be negligible. 
 
@@ -90,6 +92,7 @@ Nonzero if the ```UUID``` variable has a valid value; zero otherise.
 Given a string representation of a ```UUID```, e.g., ```5cce2058-41d3-48e8-b3ae-35ef82eb2bb4```, produces a data value.
 #### Parameters
 *pszUUID* - String representation of the UUID.
+
 *pOutputUUID* - Pointer to a buffer that receives the data value. Must not be ```NULL```.
 
 #### Remarks
