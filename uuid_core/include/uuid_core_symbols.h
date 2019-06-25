@@ -32,7 +32,8 @@ typedef uuid_t UUID;
 
 /**
  * @name UUID_SIZE
- * @brief Size of a string buffer.
+ * @brief Size of a string buffer that has the space needed to hold the
+ * string version of a UUID..
  */
 #ifndef UUID_SIZE
 #define	UUID_SIZE				37
