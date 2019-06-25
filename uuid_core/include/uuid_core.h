@@ -6,9 +6,12 @@
 
 #include "uuid_core_symbols.h"
 
+/* brings in the definition of the BOOL data type and other
+ * API entities commonly utilized across my libraries. */
 #include <../../api_core/api_core/include/api_core.h>
 
 /**
+ * @name AreUUIDsEqual
  * @brief Compares two UUIDs and determines whether they are equal.
  * @param pUUID1 Address of the first UUID value to compare.
  * @param pUUID2 Address of the second UUID value to compare.
@@ -27,6 +30,7 @@ BOOL AreUUIDsEqual(UUID* pUUID1, UUID* pUUID2);
 void CopyUUID(UUID* pDestUUID, UUID* pSrcUUID);
 
 /**
+ * @name GenerateNewUUID
  * @brief Generates a new universally-unique identifier (UUID).
  * @param pUUID Address of a memory location that will receive the value
  * generated.  This must have a valid address value.
@@ -35,6 +39,7 @@ void CopyUUID(UUID* pDestUUID, UUID* pSrcUUID);
 void GenerateNewUUID(UUID* pUUID);
 
 /**
+ * @name IsUUIDValid
  * @brief Determines whether the UUID supplied is NULL or not.
  * @param pUUID Pointer to the UUID value to be checked.
  * @returns TRUE if the uuid variable has a valid value; FALSE otherise.
@@ -42,6 +47,7 @@ void GenerateNewUUID(UUID* pUUID);
 BOOL IsUUIDValid(UUID* pUUID);
 
 /**
+ * @name UUIDFromString
  * @brief Given a string representation of a UUID, produces a data value.
  * @param pszUUID String representation of the UUID.
  * @param pOutputUUID Pointer to a buffer that receives the data value. Must
@@ -52,6 +58,7 @@ BOOL IsUUIDValid(UUID* pUUID);
 void UUIDFromString(const char* pszUUID, UUID* pOutputUUID);
 
 /**
+ * @name UUIDToString
  * @brief Given a UUID value, puts its string representation into a char array.
  * @param pUUID Address of the UUID value to represent as a string.
  * @return Pointer to the first element of a char* buffer that contains the
