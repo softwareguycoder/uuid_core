@@ -5,8 +5,8 @@
 
 /**
  * @name UUID
- * @brief Typedef of a uuid_t symbol from the libuuid.so library.  Meant to
- * make code more readable.
+ * @brief Typedef of a uuid_t symbol from the libuuid.so library.
+ * @remarks Meant to make code more readable.
  */
 typedef uuid_t UUID;
 

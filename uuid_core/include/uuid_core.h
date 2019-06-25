@@ -34,7 +34,6 @@ void CopyUUID(UUID* pDestUUID, UUID* pSrcUUID);
  * @brief Generates a new universally-unique identifier (UUID).
  * @param pUUID Address of a memory location that will receive the value
  * generated.  This must have a valid address value.
- * @remarks You can pass a null value here
  */
 void GenerateNewUUID(UUID* pUUID);
 
