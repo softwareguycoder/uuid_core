@@ -82,7 +82,7 @@ Determines whether the UUID supplied is NULL or not.
 *pUUID* - Pointer to the ```UUID``` value to be checked.
 
 #### Return values
-Nonzero if the uuid variable has a valid value; zero otherise.
+Nonzero if the ```UUID``` variable has a valid value; zero otherise.
 ### F. ```UUIDFromString``` Function
 #### Prototype
 ```void UUIDFromString(const char* pszUUID, UUID* pOutputUUID);```
